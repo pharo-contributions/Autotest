@@ -114,7 +114,7 @@ ConfigurationOfAutotest >> baseline10: spec [
 		spec
 			group: 'default' with: #('Dev' 'Tests' 'Help');
 			group: 'Dev' with: #('Autotest-GUI');
-			group: 'OB-Autotest' with: #('OB-Autotest');
+			group: 'OB' with: #('OB-Autotest');
 			group: 'Help' with: #('Autotest-Help');
 			group: 'Tests' with: #('Autotest-Tests-Core')
 		].
