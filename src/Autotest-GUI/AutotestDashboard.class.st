@@ -66,7 +66,7 @@ AutotestDashboard >> close [
 { #category : #actions }
 AutotestDashboard >> createWidgets [ 
 	widgets := AutotestAbstractWidget subclasses collect: [:aClass | aClass new].
-	(widgets sortBy: [:a :b| a order > b order]) 
+	(widgets sort: [:a :b| a order > b order]) 
 		do: [:widget | widget initWidgetOn: self].
 	^ widgets.
 ]
