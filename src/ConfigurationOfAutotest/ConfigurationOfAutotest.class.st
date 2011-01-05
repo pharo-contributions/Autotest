@@ -109,6 +109,7 @@ ConfigurationOfAutotest >> baseline10: spec [
 			package: 'Autotest-GUI' with: [spec requires: 'Autotest-Core'];
 			package: 'Autotest-Help' with: [spec requires: 'Autotest-Core'];
 			package: 'Autotest-Tests-Core' with: [spec requires: 'Autotest-Core'];
+			package: 'Autotest-Tests-GUI' with: [spec requires: 'Autotest-Core'];
 			package: 'OB-Autotest' with: [ spec requires:#('OmniBrowser' 'Autotest-GUI')].
 			
 		spec
@@ -116,7 +117,7 @@ ConfigurationOfAutotest >> baseline10: spec [
 			group: 'Dev' with: #('Autotest-GUI');
 			group: 'OB' with: #('OB-Autotest');
 			group: 'Help' with: #('Autotest-Help');
-			group: 'Tests' with: #('Autotest-Tests-Core')
+			group: 'Tests' with: #('Autotest-Tests-Core' 'Autotest-Tests-GUI')
 		].
 ]
 
@@ -148,8 +149,9 @@ ConfigurationOfAutotest >> version10: spec [
 	spec for: #pharo do: [
 		spec 
 			package: 'Autotest-Core' with: 'Autotest-Core-LaurentLaffont.2';
-			package: 'Autotest-GUI' with:'Autotest-GUI-LaurentLaffont.2';
+			package: 'Autotest-GUI' with:'Autotest-GUI-LaurentLaffont.3';
 			package: 'Autotest-Help' with: 'Autotest-Help-LaurentLaffont.1';
 			package: 'Autotest-Tests-Core' with: 'Autotest-Tests-Core-LaurentLaffont.1';
+			package: 'Autotest-Tests-GUI' with: 'Autotest-Tests-GUI-LaurentLaffont.1';
 			package: 'OB-Autotest' with:'OB-Autotest-LaurentLaffont.1'].
 ]
