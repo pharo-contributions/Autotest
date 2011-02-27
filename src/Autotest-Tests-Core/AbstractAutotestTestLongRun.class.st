@@ -1,6 +1,6 @@
 Class {
 	#name : #AbstractAutotestTestLongRun,
-	#superclass : #TestCase,
+	#superclass : #AbstractAutotestTestCase,
 	#instVars : [
 		'showTestResultCalled',
 		'givenResult',
@@ -47,6 +47,6 @@ AbstractAutotestTestLongRun >> showTestResultCallCount [
 { #category : #setup }
 AbstractAutotestTestLongRun >> tearDown [
 	autotest := nil.
-	Smalltalk garbageCollectMost.
 	(Delay forMilliseconds: 200) wait.
+	super tearDown.
 ]

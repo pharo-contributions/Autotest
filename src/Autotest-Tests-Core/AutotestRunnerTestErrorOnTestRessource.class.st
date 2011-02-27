@@ -1,6 +1,6 @@
 Class {
 	#name : #AutotestRunnerTestErrorOnTestRessource,
-	#superclass : #TestCase,
+	#superclass : #AbstractAutotestTestCase,
 	#instVars : [
 		'runner'
 	],

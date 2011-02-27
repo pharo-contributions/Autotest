@@ -1,6 +1,6 @@
 Class {
 	#name : #AutotestTestListener,
-	#superclass : #TestCase,
+	#superclass : #AbstractAutotestTestCase,
 	#instVars : [
 		'methodModifiedCalled',
 		'listener'
@@ -27,9 +27,11 @@ AutotestTestListener >> setUp [
 { #category : #tests }
 AutotestTestListener >> tearDown [ 
 	listener receiver: nil.
+	listener := nil.
 	self class removeSelector: #newMethod.
 	Smalltalk garbageCollectMost.
 	(Delay forMilliseconds: 200) wait.
+	super tearDown.
 ]
 
 { #category : #tests }

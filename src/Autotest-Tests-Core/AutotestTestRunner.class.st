@@ -1,6 +1,6 @@
 Class {
 	#name : #AutotestTestRunner,
-	#superclass : #TestCase,
+	#superclass : #AbstractAutotestTestCase,
 	#category : #'Autotest-Tests-Core'
 }
 

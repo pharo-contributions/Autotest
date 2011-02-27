@@ -1,6 +1,6 @@
 Class {
 	#name : #AutotestTestFinder,
-	#superclass : #TestCase,
+	#superclass : #AbstractAutotestTestCase,
 	#instVars : [
 		'finder'
 	],

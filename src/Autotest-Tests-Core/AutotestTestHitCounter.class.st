@@ -1,6 +1,6 @@
 Class {
 	#name : #AutotestTestHitCounter,
-	#superclass : #TestCase,
+	#superclass : #AbstractAutotestTestCase,
 	#instVars : [
 		'counter'
 	],
@@ -16,7 +16,7 @@ AutotestTestHitCounter >> setUp [
 { #category : #running }
 AutotestTestHitCounter >> tearDown [
 	counter uninstall.
-	self assert: 'zork' equals: self zork.
+	super tearDown.
 ]
 
 { #category : #tests }
