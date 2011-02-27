@@ -148,6 +148,7 @@ ConfigurationOfAutotest >> version10: spec [
 	
 	spec for: #pharo do: [
 		spec 
+			project: 'OmniBrowser' with: #stable;
 			package: 'Autotest-Core' with: 'Autotest-Core-LaurentLaffont.2';
 			package: 'Autotest-GUI' with:'Autotest-GUI-LaurentLaffont.3';
 			package: 'Autotest-Help' with: 'Autotest-Help-LaurentLaffont.1';
