@@ -25,6 +25,11 @@ AutotestHitCounter >> doesNotUnderstand: aMessage [
 		ifFalse: [^ super doesNotUnderstand: aMessage].
 ]
 
+{ #category : #actions }
+AutotestHitCounter >> flushCache [ 
+   method selector flushCache.
+]
+
 { #category : #evaluation }
 AutotestHitCounter >> hit [
 	hitCount := hitCount + 1.
