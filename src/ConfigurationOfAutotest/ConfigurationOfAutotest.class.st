@@ -1,3 +1,16 @@
+"
+Autotest is a live testing tool. It searches for unit tests related to the code you write and runs them in background.
+
+For Pharo 1.1 and 1.2:
+
+Gofer it
+       squeaksource: 'MetacelloRepository';
+       package: 'ConfigurationOfAutotest';
+       load.
+((Smalltalk at: #ConfigurationOfAutotest) project version: '1.0.1') load.
+
+Then go into Settings browser and check option Autotest.
+"
 Class {
 	#name : #ConfigurationOfAutotest,
 	#superclass : #Object,
