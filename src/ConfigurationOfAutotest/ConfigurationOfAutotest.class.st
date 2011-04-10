@@ -192,7 +192,7 @@ ConfigurationOfAutotest >> version102: spec [
 			package: 'Autotest-Help' with: 'Autotest-Help-LaurentLaffont.1';
 			package: 'Autotest-Tests-Core' with: 'Autotest-Tests-Core-LaurentLaffont.2';
 			package: 'Autotest-Tests-GUI' with: 'Autotest-Tests-GUI-LaurentLaffont.1';
-			package: 'OB-Autotest' with:'OB-Autotest-LaurentLaffont.3'].
+			package: 'OB-Autotest' with:'OB-Autotest-LaurentLaffont.4'].
 ]
 
 { #category : #versions }
