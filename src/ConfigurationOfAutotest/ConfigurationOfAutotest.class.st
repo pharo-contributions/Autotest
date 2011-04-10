@@ -172,6 +172,30 @@ ConfigurationOfAutotest >> version101: spec [
 ]
 
 { #category : #versions }
+ConfigurationOfAutotest >> version102: spec [ 
+	<version: '1.0.2' imports: #('1.0-baseline') >
+	
+	spec for: #common do: [	
+		spec 
+			blessing: #release;
+			author: 'Laurent Laffont';
+			description: 'Autotest is a live testing tool: automatically runs tests associated to
+			an modified method. It provides a dashboard to show activity and results.
+			1.0.2:  fix OBAutotest for Pharo 1.2'
+	].
+	
+	spec for: #pharo do: [
+		spec 
+			project: 'OmniBrowser' with: #stable;
+			package: 'Autotest-Core' with: 'Autotest-Core-LaurentLaffont.3';
+			package: 'Autotest-GUI' with:'Autotest-GUI-LaurentLaffont.3';
+			package: 'Autotest-Help' with: 'Autotest-Help-LaurentLaffont.1';
+			package: 'Autotest-Tests-Core' with: 'Autotest-Tests-Core-LaurentLaffont.2';
+			package: 'Autotest-Tests-GUI' with: 'Autotest-Tests-GUI-LaurentLaffont.1';
+			package: 'OB-Autotest' with:'OB-Autotest-LaurentLaffont.3'].
+]
+
+{ #category : #versions }
 ConfigurationOfAutotest >> version10: spec [ 
 	<version: '1.0' imports: #('1.0-baseline') >
 	
