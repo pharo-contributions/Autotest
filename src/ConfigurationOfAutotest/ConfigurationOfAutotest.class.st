@@ -217,3 +217,25 @@ ConfigurationOfAutotest >> version10: spec [
 			package: 'Autotest-Tests-GUI' with: 'Autotest-Tests-GUI-LaurentLaffont.1';
 			package: 'OB-Autotest' with:'OB-Autotest-LaurentLaffont.1'].
 ]
+
+{ #category : #versions }
+ConfigurationOfAutotest >> version11: spec [ 
+	<version: '1.1' imports: #('1.0-baseline') >
+	
+	spec for: #common do: [	
+		spec 
+			blessing: #development;
+			author: 'Mariano Martinez Peck';
+			description: 'Autotest for Pharo 1.3'
+	].
+	
+	spec for: #pharo do: [
+		spec 
+			project: 'OmniBrowser' with: #stable;
+			package: 'Autotest-Core' with: 'Autotest-Core-LaurentLaffont.3';
+			package: 'Autotest-GUI' with:'Autotest-GUI-LaurentLaffont.3';
+			package: 'Autotest-Help' with: 'Autotest-Help-LaurentLaffont.1';
+			package: 'Autotest-Tests-Core' with: 'Autotest-Tests-Core-LaurentLaffont.2';
+			package: 'Autotest-Tests-GUI' with: 'Autotest-Tests-GUI-LaurentLaffont.1';
+			package: 'OB-Autotest' with:'OB-Autotest-LaurentLaffont.4'].
+]
