@@ -4,7 +4,7 @@ A morph docked on one side of the screen, used by AutotestDashboard.
 "
 Class {
 	#name : #DashboardMorph,
-	#superclass : #Morph,
+	#superclass : #DockingBarMorph,
 	#classVars : [
 		'Default'
 	],
@@ -23,9 +23,8 @@ DashboardMorph >> initialize [
 	super initialize.
 	self
 		initializeLayout;
-		initializeAppearance.
-	self
-		setToAdhereToEdge: #topRight
+		initializeAppearance;
+		adhereToTop.
 ]
 
 { #category : #initialization }
