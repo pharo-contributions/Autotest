@@ -16,6 +16,26 @@ Class {
 	#category : #'Autotest-GUI'
 }
 
+{ #category : #twmbar }
+AutotestDashboard class >> activeAutotestButtonOn: aBuilder [
+	<twmBarButton>
+	aBuilder 
+		action: [AutotestDashboard showAutotestDashboard: (AutotestDashboard showAutotestDashboard not) ];
+		icon: self autotestIcon;
+		help: 'Toggle autotest'.
+]
+
+{ #category : #twmbar }
+AutotestDashboard class >> autotestIcon [ 
+	^ ((Morph new
+		fillStyle: (CompositeFillStyle fillStyles: {
+ 					ImageFillStyle form: ( Morph new
+											color: Color yellow;
+											bounds: (0@0 corner: 16@16)) imageForm.
+					ImageFillStyle form: TestRunner taskbarIcon.} ) )
+		extent: 16@16) imageForm.
+]
+
 { #category : #actions }
 AutotestDashboard class >> close [
 	self default close.
@@ -89,7 +109,9 @@ AutotestDashboard >> initializeDock [
 
 { #category : #actions }
 AutotestDashboard >> open [
-	self dock openInWorld.
+	self dock 
+		openInWorld; 
+		left: 0.
 	self createWidgets.
 ]
 
