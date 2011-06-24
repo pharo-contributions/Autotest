@@ -75,8 +75,12 @@ ConfigurationOfAutotest class >> lastMetacelloVersionLoad [
 { #category : #loading }
 ConfigurationOfAutotest class >> load [
 	"self load"
+	^(self project version: #stable) load
+]
 
-	^self project latestVersion load
+{ #category : #loading }
+ConfigurationOfAutotest class >> loadDevelopment [
+	^(self project version: #development) load
 ]
 
 { #category : #'metacello tool support' }
@@ -134,6 +138,16 @@ ConfigurationOfAutotest >> baseline10: spec [
 		].
 ]
 
+{ #category : #'symbolic versions' }
+ConfigurationOfAutotest >> development: spec [ 
+	<symbolicVersion: #development>
+	
+	spec for: #'pharo1.3.x' version: '1.2'.
+	 
+		
+
+]
+
 { #category : #accessing }
 ConfigurationOfAutotest >> project [
 
@@ -145,6 +159,17 @@ ConfigurationOfAutotest >> project [
 		project := constructor project.
 		project loadType: #linear. "change to #atomic if desired"
 		project ]
+]
+
+{ #category : #'symbolic versions' }
+ConfigurationOfAutotest >> stable: spec [ 
+	<symbolicVersion: #stable>
+	
+	spec for: #'pharo1.2.x' version: '1.0.2'.
+	spec for: #'pharo1.3.x' version: '1.1'.
+	 
+		
+
 ]
 
 { #category : #versions }
@@ -236,6 +261,29 @@ ConfigurationOfAutotest >> version11: spec [
 			package: 'Autotest-GUI' with:'Autotest-GUI-LaurentLaffont.4';
 			package: 'Autotest-Help' with: 'Autotest-Help-LaurentLaffont.1';
 			package: 'Autotest-Tests-Core' with: 'Autotest-Tests-Core-LaurentLaffont.2';
+			package: 'Autotest-Tests-GUI' with: 'Autotest-Tests-GUI-LaurentLaffont.1';
+			package: 'OB-Autotest' with:'OB-Autotest-LaurentLaffont.4'].
+]
+
+{ #category : #versions }
+ConfigurationOfAutotest >> version12: spec [ 
+	<version: '1.2' imports: #('1.0-baseline') >
+	
+	spec for: #common do: [	
+		spec 
+			blessing: #development;
+			author: 'Laurent Laffont';
+			description: '	- TWM integration
+							- PhExample integration.'
+	].
+	
+	spec for: #pharo do: [
+		spec 
+			project: 'OmniBrowser' with: #stable;
+			package: 'Autotest-Core' with: 'Autotest-Core-LaurentLaffont.4';
+			package: 'Autotest-GUI' with:'Autotest-GUI-LaurentLaffont.4';
+			package: 'Autotest-Help' with: 'Autotest-Help-LaurentLaffont.1';
+			package: 'Autotest-Tests-Core' with: 'Autotest-Tests-Core-LaurentLaffont.3';
 			package: 'Autotest-Tests-GUI' with: 'Autotest-Tests-GUI-LaurentLaffont.1';
 			package: 'OB-Autotest' with:'OB-Autotest-LaurentLaffont.4'].
 ]
