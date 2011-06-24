@@ -10,7 +10,18 @@ Class {
 { #category : #running }
 AutotestTestFinder >> setUp [
 	finder := AutotestFinder new.
-	
+]
+
+{ #category : #private }
+AutotestTestFinder >> shouldBeFound [
+	"method used to check that it is found by Autotest"
+	self assert: true
+]
+
+{ #category : #private }
+AutotestTestFinder >> shouldNotBeFound: anArgument [
+	"method used to check that is not found by Autotest"
+	self assert: true
 ]
 
 { #category : #private }
@@ -86,6 +97,26 @@ AutotestTestFinder >> testMethodsForLastHeuristicReturnsAllTestWhichReferenceThe
 	myTestMethods := self class allTestMethods asOrderedCollection.
 	foundMethods := finder methodsFor: (finder class>>'baseCategoryNameOfMethod:' asSymbol).
 	self assert: foundMethods equals: myTestMethods.
+]
+
+{ #category : #tests }
+AutotestTestFinder >> testMethodsForMethodThatHasAnArgumentShouldNotReturnIt [
+		| lookupMethod foundMethods thisMethod |
+	
+	lookupMethod := (self class>>#shouldNotBeFound:).
+	foundMethods := (finder methodsFor: lookupMethod).
+
+	self deny: (foundMethods includes: lookupMethod).
+]
+
+{ #category : #tests }
+AutotestTestFinder >> testMethodsForMethodThatStartWithShouldReturnsIt [
+		| lookupMethod foundMethods thisMethod |
+	
+	lookupMethod := (self class>>#shouldBeFound).
+	foundMethods := (finder methodsFor: lookupMethod).
+
+	self assert: (foundMethods includes: lookupMethod).
 ]
 
 { #category : #tests }
