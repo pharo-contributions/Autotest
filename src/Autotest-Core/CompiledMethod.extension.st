@@ -8,7 +8,7 @@ CompiledMethod >> belongsToTestCase [
 { #category : #'*Autotest-Core' }
 CompiledMethod >> isTestMethod [ 
   	^ 	self belongsToTestCase
-		and: ['test*' match: self selector].
+		and: [ self methodClass allTestSelectors includes: self selector].
 ]
 
 { #category : #'*Autotest-Core' }
