@@ -1,6 +1,10 @@
 "
 Autotest is a live testing tool. It searches for unit tests related to the code you write and runs them in background.
 
+To load latest version:
+
+ConfigurationOfAutotest load.
+
 For Pharo 1.1 and 1.2:
 
 Gofer it
@@ -167,6 +171,7 @@ ConfigurationOfAutotest >> stable: spec [
 	
 	spec for: #'pharo1.2.x' version: '1.0.2'.
 	spec for: #'pharo1.3.x' version: '1.1'.
+	spec for: #'pharo1.4.x' version: '1.2'.
 	 
 		
 
@@ -271,7 +276,7 @@ ConfigurationOfAutotest >> version12: spec [
 	
 	spec for: #common do: [	
 		spec 
-			blessing: #development;
+			blessing: #release;
 			author: 'Laurent Laffont';
 			description: '	- TWM integration
 							- PhExample integration.'
@@ -283,7 +288,7 @@ ConfigurationOfAutotest >> version12: spec [
 			package: 'Autotest-Core' with: 'Autotest-Core-SeanDeNigris.5';
 			package: 'Autotest-GUI' with:'Autotest-GUI-LaurentLaffont.5';
 			package: 'Autotest-Help' with: 'Autotest-Help-LaurentLaffont.1';
-			package: 'Autotest-Tests-Core' with: 'Autotest-Tests-Core-LaurentLaffont.3';
+			package: 'Autotest-Tests-Core' with: 'Autotest-Tests-Core-LaurentLaffont.4';
 			package: 'Autotest-Tests-GUI' with: 'Autotest-Tests-GUI-LaurentLaffont.1';
 			package: 'OB-Autotest' with:'OB-Autotest-LaurentLaffont.4'].
 ]
