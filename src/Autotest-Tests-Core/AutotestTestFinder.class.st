@@ -7,6 +7,18 @@ Class {
 	#category : #'Autotest-Tests-Core'
 }
 
+{ #category : #testing }
+AutotestTestFinder >> expectedFailures [
+	^ (Smalltalk at: #Phexample ifAbsent: nil)   
+		ifNil: [#(testMethodsForMethodThatStartWithShouldReturnsIt)]
+		ifNotNil: [#()]
+]
+
+{ #category : #private }
+AutotestTestFinder >> packageOfClass: aClass [
+	^ PackageOrganizer default packageOfClass: aClass
+]
+
 { #category : #running }
 AutotestTestFinder >> setUp [
 	finder := AutotestFinder new.
@@ -123,14 +135,14 @@ AutotestTestFinder >> testMethodsForMethodThatStartWithShouldReturnsIt [
 AutotestTestFinder >> testMethodsForReturnsTestCaseOfSamePackage [
 	| lookupMethod foundMethods thisMethod allMethods otherPackages thisPackage |
 	
-	thisPackage := thisContext methodClass package.
+	thisPackage := self packageOfClass: thisContext methodClass.
 	lookupMethod := (AutotestFinder>>#allSendersOf:).
 	 
 	"Check that allSendersOf: actually returns methods from other packages than Autotest"
 	allMethods := finder allSendersOf: lookupMethod.
 	otherPackages := (allMethods reject: 
 								[:aMethod|  
-								 aMethod methodClass package = thisPackage]).
+								thisPackage = (self packageOfClass: aMethod methodClass)]).
 	
 	self assert: (otherPackages size > 0).
 	
@@ -138,6 +150,6 @@ AutotestTestFinder >> testMethodsForReturnsTestCaseOfSamePackage [
 	foundMethods := finder methodsFor: lookupMethod.
 	foundMethods do: [:aMethod|
 						self 
-							assert: aMethod methodClass package
+							assert: (self packageOfClass: aMethod methodClass)
 							equals: thisPackage].
 ]
