@@ -177,7 +177,7 @@ AutotestLogWidget >> selectedTestChanged: anInteger [
 	[selectedTest := self runTests at: anInteger]
 		on:Error do: [selectedTest := nil].
 	self changed: #selectedTest.
-	selectedTest ifNotNil: [ToolSet browse: (selectedTest class) selector: selectedTest selector].
+	selectedTest ifNotNil: [Smalltalk tools browser fullOnClass:  (selectedTest class) selector: selectedTest selector].
 ]
 
 { #category : #callbacks }
