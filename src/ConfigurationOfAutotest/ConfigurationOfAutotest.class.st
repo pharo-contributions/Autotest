@@ -142,6 +142,30 @@ ConfigurationOfAutotest >> baseline10: spec [
 		].
 ]
 
+{ #category : #baselines }
+ConfigurationOfAutotest >> baseline11: spec [ 
+	<version: '1.1-baseline'>
+	
+	spec for: #common do: [
+		spec blessing: #baseline.
+	].
+
+	spec for: #pharo do: [				
+		spec 
+			repository: 'http://smalltalkhub.com/mc/LaurentLaffont/Autotest/main';
+			package: 'Autotest-Core';
+			package: 'Autotest-GUI' with: [spec requires: 'Autotest-Core'];
+			package: 'Autotest-Help' with: [spec requires: 'Autotest-Core'];
+			package: 'Autotest-Tests-Core' with: [spec requires: 'Autotest-Core'];
+			package: 'Autotest-Tests-GUI' with: [spec requires: 'Autotest-Core'].
+			
+		spec
+			group: 'default' with: #('Dev' 'Tests' 'Help');
+			group: 'Dev' with: #('Autotest-GUI');
+			group: 'Help' with: #('Autotest-Help');
+			group: 'Tests' with: #('Autotest-Tests-Core' 'Autotest-Tests-GUI')].
+]
+
 { #category : #'symbolic versions' }
 ConfigurationOfAutotest >> development: spec [ 
 	<symbolicVersion: #development>
@@ -173,6 +197,7 @@ ConfigurationOfAutotest >> stable: spec [
 	spec for: #'pharo1.3.x' version: '1.1'.
 	spec for: #'pharo1.4.x' version: '1.2'.
 	spec for: #'pharo2.0.x' version: '1.3'.
+	spec for: #'pharo3.0.x' version: '1.3'.
 	 
 		
 
@@ -296,7 +321,7 @@ ConfigurationOfAutotest >> version12: spec [
 
 { #category : #versions }
 ConfigurationOfAutotest >> version13: spec [ 
-	<version: '1.3' imports: #('1.0-baseline') >
+	<version: '1.3' imports: #('1.1-baseline') >
 	
 	spec for: #common do: [	
 		spec 
