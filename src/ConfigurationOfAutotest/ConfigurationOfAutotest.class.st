@@ -142,37 +142,11 @@ ConfigurationOfAutotest >> baseline10: spec [
 		].
 ]
 
-{ #category : #baselines }
-ConfigurationOfAutotest >> baseline13: spec [ 
-	<version: '1.3-baseline'>
-	
-	spec for: #common do: [
-		spec blessing: #baseline.
-	].
-
-	spec for: #pharo do: [		
-		spec 
-			repository: 'http://smalltalkhub.com/mc/LaurentLaffont/Autotest/main';
-			package: 'Autotest-Core';
-			package: 'Autotest-GUI' with: [spec requires: 'Autotest-Core'];
-			package: 'Autotest-Help' with: [spec requires: 'Autotest-Core'];
-			package: 'Autotest-Tests-Core' with: [spec requires: 'Autotest-Core'];
-			package: 'Autotest-Tests-GUI' with: [spec requires: 'Autotest-Core'].
-			
-		spec
-			group: 'default' with: #('Dev' 'Tests' 'Help');
-			group: 'Dev' with: #('Autotest-GUI');
-			group: 'Help' with: #('Autotest-Help');
-			group: 'Tests' with: #('Autotest-Tests-Core' 'Autotest-Tests-GUI')
-		].
-]
-
 { #category : #'symbolic versions' }
 ConfigurationOfAutotest >> development: spec [ 
 	<symbolicVersion: #development>
 	
 	spec for: #'pharo1.3.x' version: '1.2'.
-	spec for: #'pharo2.0.x' version: '1.3'.
 	 
 		
 
@@ -198,6 +172,7 @@ ConfigurationOfAutotest >> stable: spec [
 	spec for: #'pharo1.2.x' version: '1.0.2'.
 	spec for: #'pharo1.3.x' version: '1.1'.
 	spec for: #'pharo1.4.x' version: '1.2'.
+	spec for: #'pharo2.0.x' version: '1.3'.
 	 
 		
 
@@ -321,21 +296,20 @@ ConfigurationOfAutotest >> version12: spec [
 
 { #category : #versions }
 ConfigurationOfAutotest >> version13: spec [ 
-	<version: '1.3' imports: #('1.3-baseline') >
+	<version: '1.3' imports: #('1.0-baseline') >
 	
 	spec for: #common do: [	
 		spec 
 			blessing: #release;
 			author: 'Laurent Laffont';
-			description: 'Pharo 2.0 port.'
+			description: 'Pharo2.0 port'
 	].
 	
 	spec for: #pharo do: [
 		spec 
-			package: 'Autotest-Core' with: 'Autotest-Core-SeanDeNigris.5';
-			package: 'Autotest-GUI' with:'Autotest-GUI-DanielUber.6';
-			package: 'Autotest-Help' with: 'Autotest-Help-LaurentLaffont.1';
-			package: 'Autotest-Tests-Core' with: 'Autotest-Tests-Core-LaurentLaffont.4';
-			package: 'Autotest-Tests-GUI' with: 'Autotest-Tests-GUI-LaurentLaffont.1';
-			package: 'OB-Autotest' with:'OB-Autotest-LaurentLaffont.4'].
+			package: 'Autotest-Core' with: 'Autotest-Core-Laurent.6';
+			package: 'Autotest-GUI' with:'Autotest-GUI-BenjaminVanRyseghem.7';
+			package: 'Autotest-Help' with: 'Autotest-Help-BenjaminVanRyseghem.2';
+			package: 'Autotest-Tests-Core' with: 'Autotest-Tests-Core-BenjaminVanRyseghem.6';
+			package: 'Autotest-Tests-GUI' with: 'Autotest-Tests-GUI-BenjaminVanRyseghem.2']
 ]
