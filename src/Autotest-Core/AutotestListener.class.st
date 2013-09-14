@@ -19,15 +19,12 @@ AutotestListener class >> on: receiver methodModified: methodModifiedSelector [
 ]
 
 { #category : #'system changes' }
-AutotestListener >> event: anEvent [
-	"When an event is received, notify the receiver"
-	| testMethods aTestResult changedMethod |
-	
-	(anEvent item isKindOf: CompiledMethod) ifFalse: [^ self].
+AutotestListener >> event: anAnnouncement [
+	"When an announcement is received, notify the receiver"
 	receiver ifNil: [^ self].
 	methodModifedSelector ifNil: [^ self].
 	
-	receiver perform: methodModifedSelector with: anEvent item.
+	receiver perform: methodModifedSelector with: anAnnouncement newMethod.
 	
 ]
 
@@ -39,17 +36,29 @@ AutotestListener >> initialize [
 { #category : #'system changes' }
 AutotestListener >> installSystemNotifications [
 	"Listen all modified and added methods"
-	| events notifier|
-	notifier := SystemChangeNotifier uniqueInstance.
-	events := OrderedCollection new.
-	#(Modified Added) do: 
-		[:anEventKind|
-		events addAll: (notifier systemEventsForChange: anEventKind).].
+	SystemAnnouncer uniqueInstance weak
+	  on: MethodAdded send: #methodAdded: to: self;
+	  on: MethodModified send: #methodModified: to: self.
+]
+
+{ #category : #'system changes' }
+AutotestListener >> methodAdded: anAnnouncement [
+	"When an announcement is received, notify the receiver"
+	receiver ifNil: [^ self].
+	methodModifedSelector ifNil: [^ self].
 	
-	notifier
-		notify: self
-		ofEvents: events
-		using: #event:
+	receiver perform: methodModifedSelector with: anAnnouncement method.
+	
+]
+
+{ #category : #'system changes' }
+AutotestListener >> methodModified: anAnnouncement [
+	"When an announcement is received, notify the receiver"
+	receiver ifNil: [^ self].
+	methodModifedSelector ifNil: [^ self].
+	
+	receiver perform: methodModifedSelector with: anAnnouncement newMethod.
+
 ]
 
 { #category : #accessing }
@@ -61,8 +70,7 @@ AutotestListener >> methodModifiedSelector: aSelector [
 { #category : #'system changes' }
 AutotestListener >> noMoreNotifications [
 	"Do not receiver any system change notification anymore"
-	SystemChangeNotifier uniqueInstance noMoreNotificationsFor: self
-
+	SystemAnnouncer uniqueInstance unsubscribe: self.
 ]
 
 { #category : #'initialize-release' }

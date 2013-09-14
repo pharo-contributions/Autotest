@@ -27,7 +27,7 @@ AutotestRunner >> runTest: aCompiledMethod result: aTestResult [
 	
 	[	aTestCase resources do: [ :each |
 			each isAvailable
-				ifFalse: [ each signalInitializationError ] ].
+				ifFalse: [ self signal:  'Resource ' ,  each name , ' could not be initialized' ] ].
 	
 		[aTestCase run: aTestResult.] 
 			ensure: [ aTestCase resources do: [ :each | each reset ]].
