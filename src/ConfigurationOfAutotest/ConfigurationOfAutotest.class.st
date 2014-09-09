@@ -198,6 +198,7 @@ ConfigurationOfAutotest >> stable: spec [
 	spec for: #'pharo1.4.x' version: '1.2'.
 	spec for: #'pharo2.0.x' version: '1.3'.
 	spec for: #'pharo3.0.x' version: '1.3'.
+	spec for: #'pharo4.0.x' version: '1.3'.
 	 
 		
 
