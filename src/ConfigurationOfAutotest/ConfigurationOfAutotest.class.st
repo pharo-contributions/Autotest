@@ -198,7 +198,7 @@ ConfigurationOfAutotest >> stable: spec [
 	spec for: #'pharo1.4.x' version: '1.2'.
 	spec for: #'pharo2.0.x' version: '1.3'.
 	spec for: #'pharo3.0.x' version: '1.3'.
-	spec for: #'pharo4.0.x' version: '1.3'.
+	spec for: #'pharo4.0.x' version: '1.4'.
 	 
 		
 
@@ -337,5 +337,25 @@ ConfigurationOfAutotest >> version13: spec [
 			package: 'Autotest-GUI' with:'Autotest-GUI-BenjaminVanRyseghem.7';
 			package: 'Autotest-Help' with: 'Autotest-Help-BenjaminVanRyseghem.2';
 			package: 'Autotest-Tests-Core' with: 'Autotest-Tests-Core-BenjaminVanRyseghem.6';
+			package: 'Autotest-Tests-GUI' with: 'Autotest-Tests-GUI-BenjaminVanRyseghem.2']
+]
+
+{ #category : #versions }
+ConfigurationOfAutotest >> version14: spec [ 
+	<version: '1.4' imports: #('1.1-baseline') >
+	
+	spec for: #common do: [	
+		spec 
+			blessing: #release;
+			author: 'Torsten Bergmann';
+			description: 'Pharo4.0 port'
+	].
+	
+	spec for: #pharo do: [
+		spec 
+			package: 'Autotest-Core' with: 'Autotest-Core-Laurent.6';
+			package: 'Autotest-GUI' with:'Autotest-GUI-TorstenBergmann.8';
+			package: 'Autotest-Help' with: 'Autotest-Help-TorstenBergmann.3';
+			package: 'Autotest-Tests-Core' with: 'Autotest-Tests-Core-TorstenBergmann.7';
 			package: 'Autotest-Tests-GUI' with: 'Autotest-Tests-GUI-BenjaminVanRyseghem.2']
 ]
