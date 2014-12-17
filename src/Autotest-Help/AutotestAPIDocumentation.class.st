@@ -15,6 +15,6 @@ AutotestAPIDocumentation class >> builder [
 ]
 
 { #category : #accessing }
-AutotestAPIDocumentation class >> packages [
+AutotestAPIDocumentation class >> helpPackages [
 	^#('Autotest-Core' 'Autotest-GUI')
 ]
