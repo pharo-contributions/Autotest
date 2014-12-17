@@ -48,6 +48,12 @@ AutotestDashboard class >> default [
 	^ Default ifNil: [Default := self new].
 ]
 
+{ #category : #examples }
+AutotestDashboard class >> example [
+
+	^self open
+]
+
 { #category : #actions }
 AutotestDashboard class >> open [
 	^ self default open.
