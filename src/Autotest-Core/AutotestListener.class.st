@@ -37,8 +37,8 @@ AutotestListener >> initialize [
 AutotestListener >> installSystemNotifications [
 	"Listen all modified and added methods"
 	SystemAnnouncer uniqueInstance weak
-	  on: MethodAdded send: #methodAdded: to: self;
-	  on: MethodModified send: #methodModified: to: self.
+	  when: MethodAdded send: #methodAdded: to: self;
+	  when: MethodModified send: #methodModified: to: self.
 ]
 
 { #category : #'system changes' }
