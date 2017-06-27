@@ -16,7 +16,7 @@ AutotestTestFinder >> expectedFailures [
 
 { #category : #private }
 AutotestTestFinder >> packageOfClass: aClass [
-	^ RPackageOrganizer default packageOfClass: aClass
+	^ aClass package
 ]
 
 { #category : #running }
