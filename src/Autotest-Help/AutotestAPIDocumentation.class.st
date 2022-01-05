@@ -1,7 +1,10 @@
+"
+Provides an API documentation for Autotest package
+"
 Class {
 	#name : #AutotestAPIDocumentation,
 	#superclass : #HelpOnAutotest,
-	#category : #'Autotest-Help'
+	#category : #'Autotest-Help-API'
 }
 
 { #category : #accessing }
