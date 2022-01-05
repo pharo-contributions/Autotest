@@ -8,6 +8,7 @@ Class {
 }
 
 { #category : #testing }
-MockAutotestUnavailableResource >> isAvailable [ 
+MockAutotestUnavailableResource >> isAvailable [
+
 	^ false
 ]

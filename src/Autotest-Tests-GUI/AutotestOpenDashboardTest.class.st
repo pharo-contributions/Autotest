@@ -13,5 +13,6 @@ AutotestOpenDashboardTest >> tearDown [
 
 { #category : #tests }
 AutotestOpenDashboardTest >> testShouldNotRaiseDeprecation [
-	self shouldnt: [AutotestDashboard open] raise: Deprecation
+
+	self shouldnt: [ AutotestDashboard open ] raise: Deprecation
 ]
