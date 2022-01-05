@@ -14,7 +14,7 @@ Autotest originally was originally created by Laurent Laffont, originally hosted
 - Dale Henrichs
 - Mariano Martinez Peck
 
-Last source code was available on [http://smalltalkhub.com/LaurentLaffont/Autotest/index.html](http://smalltalkhub.com/LaurentLaffont/Autotest/index.html) and was then migrated over to GitHub. See also [Laurent Laffonts tweet](https://twitter.com/lolgzs/status/396669464764502016)
+Last source code was available on [http://smalltalkhub.com/LaurentLaffont/Autotest/index.html](http://smalltalkhub.com/LaurentLaffont/Autotest/index.html) and was then migrated over to GitHub. See also [Laurent Laffonts tweet](https://twitter.com/lolgzs/status/396669464764502016) and [Blog post](http://magaloma.blogspot.com/2010/06/autotest-for-pharo.html)
 
 There was also another repo at [http://smalltalkhub.com/Pharo/AutoTest/mc/](http://smalltalkhub.com/Pharo/AutoTest/mc/)
 
