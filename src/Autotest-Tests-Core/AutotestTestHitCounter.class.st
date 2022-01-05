@@ -9,14 +9,16 @@ Class {
 
 { #category : #running }
 AutotestTestHitCounter >> setUp [
+	super setUp.
 	self assert: 'zork' equals: self zork.	
 	counter := AutotestHitCounter on: (self class>>#zork).
 ]
 
 { #category : #running }
 AutotestTestHitCounter >> tearDown [
+
 	counter uninstall.
-	super tearDown.
+	super tearDown
 ]
 
 { #category : #tests }

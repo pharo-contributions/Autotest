@@ -21,7 +21,9 @@ AutotestTestFinder >> packageOfClass: aClass [
 
 { #category : #running }
 AutotestTestFinder >> setUp [
-	finder := AutotestFinder new.
+
+	super setUp.
+	finder := AutotestFinder new
 ]
 
 { #category : #private }

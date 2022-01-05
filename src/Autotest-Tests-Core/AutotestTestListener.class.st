@@ -19,19 +19,21 @@ AutotestTestListener >> methodModified: aCompiledMethod [
 ]
 
 { #category : #running }
-AutotestTestListener >> setUp [ 
+AutotestTestListener >> setUp [
+
 	listener := AutotestListener on: self methodModified: #methodModified:.
-	methodModifiedCalled := false.
+	methodModifiedCalled := false
 ]
 
 { #category : #running }
-AutotestTestListener >> tearDown [ 
+AutotestTestListener >> tearDown [
+
 	listener receiver: nil.
 	listener := nil.
 	self class removeSelector: #newMethod.
 	Smalltalk garbageCollectMost.
 	(Delay forMilliseconds: 200) wait.
-	super tearDown.
+	super tearDown
 ]
 
 { #category : #tests }

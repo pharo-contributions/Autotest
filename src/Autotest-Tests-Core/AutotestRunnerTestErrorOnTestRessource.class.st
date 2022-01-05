@@ -31,7 +31,9 @@ AutotestRunnerTestErrorOnTestRessource >> pass [
 
 { #category : #running }
 AutotestRunnerTestErrorOnTestRessource >> setUp [
-	runner := AutotestRunner new.
+
+	super setUp.
+	runner := AutotestRunner new
 ]
 
 { #category : #tests }

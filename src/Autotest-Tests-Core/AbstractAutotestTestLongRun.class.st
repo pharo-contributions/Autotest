@@ -23,9 +23,10 @@ AbstractAutotestTestLongRun >> incShowTestResultCallCount [
 
 { #category : #running }
 AbstractAutotestTestLongRun >> setUp [
-	"self assert: Autotest allInstances isEmpty."
+
+	super setUp.
 	autotest := Autotest view: self.
-	showMethodModifiedCalled := false.
+	showMethodModifiedCalled := false
 ]
 
 { #category : #callbacks }
@@ -46,7 +47,8 @@ AbstractAutotestTestLongRun >> showTestResultCallCount [
 
 { #category : #running }
 AbstractAutotestTestLongRun >> tearDown [
+
 	autotest := nil.
 	(Delay forMilliseconds: 200) wait.
-	super tearDown.
+	super tearDown
 ]

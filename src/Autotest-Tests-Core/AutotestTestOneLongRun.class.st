@@ -9,9 +9,10 @@ Class {
 
 { #category : #running }
 AutotestTestOneLongRun >> setUp [
+
 	super setUp.
 	self deny: (AutotestTestMockTestCase>>#testLongMethod) class = AutotestHitCounter.
-	autotest methodModified: (AutotestTestMockTestCase>>#testLongMethod).
+	autotest methodModified: (AutotestTestMockTestCase>>#testLongMethod)
 ]
 
 { #category : #tests }

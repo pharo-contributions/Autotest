@@ -5,7 +5,8 @@ Class {
 }
 
 { #category : #running }
-AbstractAutotestTestCase >> tearDown [ 
+AbstractAutotestTestCase >> tearDown [
+
 	AutotestListener allInstancesDo: [:anAutotestListener| anAutotestListener noMoreNotifications].
-	super tearDown.   
+	super tearDown 
 ]
