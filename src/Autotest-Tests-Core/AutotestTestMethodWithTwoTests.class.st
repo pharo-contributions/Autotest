@@ -4,12 +4,13 @@ Class {
 	#category : #'Autotest-Tests-Core'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : #tests }
 AutotestTestMethodWithTwoTests >> testHitCountEqualsTwo [
+
 	autotest methodModified: (
 		(Smalltalk at: ('AutotestTestMockTestCase') asSymbol)  
 			lookupSelector: 'zorky' asSymbol).
 	(Delay forMilliseconds: 1000) wait.
 	self deny: givenResult isNil.
-	self assert: 2 equals: givenResult hitCount.
+	self assert: 2 equals: givenResult hitCount
 ]
