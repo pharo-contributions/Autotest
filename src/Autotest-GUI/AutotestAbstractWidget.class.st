@@ -7,6 +7,12 @@ Class {
 	#category : #'Autotest-GUI-Widgets'
 }
 
+{ #category : #testing }
+AutotestAbstractWidget class >> isAbstract [
+		
+	^ self == AutotestAbstractWidget
+]
+
 { #category : #'initialize-release' }
 AutotestAbstractWidget >> dashboardIsClosing [
 	self
