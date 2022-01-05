@@ -102,11 +102,11 @@ AutotestFinder >> testsForATestMethod: aCompiledMethod [
 { #category : #heuristics }
 AutotestFinder >> testsForClassReferenceOf: aCompiledMethod [
 	"Find all tests in related packages that reference the method's class"
-	| allSenders baseCategoryName allSendersClass allTests |
+	| baseCategoryName allSendersClass allTests |
 	baseCategoryName := self baseCategoryNameOfMethod: aCompiledMethod.
 	allSendersClass := (aCompiledMethod methodClass allCallsOn 
 							collect: [:aReference| 
-									 aReference actualClass]) asSet
+									 aReference methodClass]) asSet
 							select: [:aClass| 
 									(aClass isKindOf: TestCase class) 
 									and: [baseCategoryName = (self baseCategoryNameOf: aClass category)]].
