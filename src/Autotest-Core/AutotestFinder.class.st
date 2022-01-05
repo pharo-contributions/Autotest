@@ -28,13 +28,16 @@ AutotestFinder >> baseCategoryNameOf: aCategoryName [
 ]
 
 { #category : #search }
-AutotestFinder >> baseCategoryNameOfMethod: aCompiledMethod [ 
+AutotestFinder >> baseCategoryNameOfMethod: aCompiledMethod [
+
 	"Often tests are not in the same package as the methods. So we need to find the
 	category related to a given method. We compare just the root/base of the category name.
 	
 	 For a method of category Zork-Tests answers 'Zork'.
 	 See baseCategoryNameOf:'"
-	^ self baseCategoryNameOf:  aCompiledMethod methodClass theNonMetaClass category
+
+	^ self baseCategoryNameOf:
+		  aCompiledMethod methodClass instanceSide category
 ]
 
 { #category : #search }
