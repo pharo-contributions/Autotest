@@ -146,7 +146,7 @@ AutotestTestFinder >> testMethodsForReturnsTestCaseOfSamePackage [
 								[:aMethod|  
 								thisPackage = (self packageOfClass: aMethod methodClass)]).
 	
-	self assert: (otherPackages size > 0).
+	self assert: otherPackages notEmpty.
 	
 	"Now check methodsFor: filter found tests to returns only those which belongs to same package"
 	foundMethods := finder methodsFor: lookupMethod.
