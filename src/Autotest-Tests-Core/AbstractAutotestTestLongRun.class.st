@@ -11,7 +11,7 @@ Class {
 	#category : #'Autotest-Tests-Core'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : #testing }
 AbstractAutotestTestLongRun class >> isAbstract [ 
 	^ self name = #AbstractAutotestTestLongRun
 ]
