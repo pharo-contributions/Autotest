@@ -4,7 +4,7 @@ Class {
 	#category : #'Autotest-Tests-Core'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : #running }
 AbstractAutotestTestCase >> tearDown [ 
 	AutotestListener allInstancesDo: [:anAutotestListener| anAutotestListener noMoreNotifications].
 	super tearDown.   

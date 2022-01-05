@@ -4,7 +4,7 @@ Class {
 	#category : #'Autotest-Tests-Core'
 }
 
-{ #category : #private }
+{ #category : #running }
 AutotestTestFinderSubClass >> setUp [
 	super setUp
 	

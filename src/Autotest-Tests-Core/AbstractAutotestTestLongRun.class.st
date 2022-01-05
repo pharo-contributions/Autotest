@@ -21,7 +21,7 @@ AbstractAutotestTestLongRun >> incShowTestResultCallCount [
 	showTestResultCallCount := self showTestResultCallCount + 1.
 ]
 
-{ #category : #setup }
+{ #category : #running }
 AbstractAutotestTestLongRun >> setUp [
 	"self assert: Autotest allInstances isEmpty."
 	autotest := Autotest view: self.
@@ -44,7 +44,7 @@ AbstractAutotestTestLongRun >> showTestResultCallCount [
 	^ showTestResultCallCount ifNil: [showTestResultCallCount := 0].
 ]
 
-{ #category : #setup }
+{ #category : #running }
 AbstractAutotestTestLongRun >> tearDown [
 	autotest := nil.
 	(Delay forMilliseconds: 200) wait.

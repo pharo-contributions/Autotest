@@ -7,7 +7,7 @@ Class {
 	#category : #'Autotest-Tests-Core'
 }
 
-{ #category : #setup }
+{ #category : #running }
 AutotestTestOneLongRun >> setUp [
 	super setUp.
 	self deny: (AutotestTestMockTestCase>>#testLongMethod) class = AutotestHitCounter.

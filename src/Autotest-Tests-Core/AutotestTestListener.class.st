@@ -18,13 +18,13 @@ AutotestTestListener >> methodModified: aCompiledMethod [
 	methodModifiedCalled := true.
 ]
 
-{ #category : #tests }
+{ #category : #running }
 AutotestTestListener >> setUp [ 
 	listener := AutotestListener on: self methodModified: #methodModified:.
 	methodModifiedCalled := false.
 ]
 
-{ #category : #tests }
+{ #category : #running }
 AutotestTestListener >> tearDown [ 
 	listener receiver: nil.
 	listener := nil.
