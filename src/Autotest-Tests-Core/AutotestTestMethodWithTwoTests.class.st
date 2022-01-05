@@ -1,7 +1,7 @@
 Class {
 	#name : #AutotestTestMethodWithTwoTests,
 	#superclass : #AbstractAutotestTestLongRun,
-	#category : #'Autotest-Tests-Core'
+	#category : #'Autotest-Tests-Core-LongRun'
 }
 
 { #category : #tests }

@@ -4,7 +4,7 @@ Test that Autotest search and run tests in a background thread
 Class {
 	#name : #AutotestTestOneLongRun,
 	#superclass : #AbstractAutotestTestLongRun,
-	#category : #'Autotest-Tests-Core'
+	#category : #'Autotest-Tests-Core-LongRun'
 }
 
 { #category : #running }

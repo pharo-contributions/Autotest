@@ -8,7 +8,7 @@ Class {
 		'autotest',
 		'showMethodModifiedCalled'
 	],
-	#category : #'Autotest-Tests-Core'
+	#category : #'Autotest-Tests-Core-LongRun'
 }
 
 { #category : #testing }

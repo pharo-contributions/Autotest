@@ -1,7 +1,7 @@
 Class {
 	#name : #AutotestTestRunner,
 	#superclass : #AbstractAutotestTestCase,
-	#category : #'Autotest-Tests-Core'
+	#category : #'Autotest-Tests-Core-Base'
 }
 
 { #category : #private }

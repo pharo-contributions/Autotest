@@ -4,7 +4,7 @@ Class {
 	#instVars : [
 		'finder'
 	],
-	#category : #'Autotest-Tests-Core'
+	#category : #'Autotest-Tests-Core-Base'
 }
 
 { #category : #testing }

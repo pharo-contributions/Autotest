@@ -1,7 +1,7 @@
 Class {
 	#name : #AutotestTestFinderSubClass,
 	#superclass : #AutotestTestFinder,
-	#category : #'Autotest-Tests-Core'
+	#category : #'Autotest-Tests-Core-Base'
 }
 
 { #category : #running }

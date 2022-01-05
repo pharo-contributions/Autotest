@@ -7,7 +7,7 @@ Class {
 	#classInstVars : [
 		'resources'
 	],
-	#category : #'Autotest-Tests-Core'
+	#category : #'Autotest-Tests-Core-Base'
 }
 
 { #category : #'as yet unclassified' }

@@ -4,7 +4,7 @@ Class {
 	#instVars : [
 		'counter'
 	],
-	#category : #'Autotest-Tests-Core'
+	#category : #'Autotest-Tests-Core-Base'
 }
 
 { #category : #running }
