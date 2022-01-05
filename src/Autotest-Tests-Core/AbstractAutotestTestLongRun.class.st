@@ -12,13 +12,15 @@ Class {
 }
 
 { #category : #testing }
-AbstractAutotestTestLongRun class >> isAbstract [ 
+AbstractAutotestTestLongRun class >> isAbstract [
+
 	^ self name = #AbstractAutotestTestLongRun
 ]
 
 { #category : #convenience }
-AbstractAutotestTestLongRun >> incShowTestResultCallCount [ 
-	showTestResultCallCount := self showTestResultCallCount + 1.
+AbstractAutotestTestLongRun >> incShowTestResultCallCount [
+
+	showTestResultCallCount := self showTestResultCallCount + 1
 ]
 
 { #category : #running }
@@ -30,19 +32,22 @@ AbstractAutotestTestLongRun >> setUp [
 ]
 
 { #category : #callbacks }
-AbstractAutotestTestLongRun >> showMethodModified: aCompiledMethod [ 
-	showMethodModifiedCalled := true.
+AbstractAutotestTestLongRun >> showMethodModified: aCompiledMethod [
+
+	showMethodModifiedCalled := true
 ]
 
 { #category : #callbacks }
-AbstractAutotestTestLongRun >> showTestResult: aTestResult OfMethod: aCompiledMethod [ 
+AbstractAutotestTestLongRun >> showTestResult: aTestResult OfMethod: aCompiledMethod [
+
 	self incShowTestResultCallCount.
-	givenResult := aTestResult.
+	givenResult := aTestResult
 ]
 
 { #category : #accessing }
-AbstractAutotestTestLongRun >> showTestResultCallCount [ 
-	^ showTestResultCallCount ifNil: [showTestResultCallCount := 0].
+AbstractAutotestTestLongRun >> showTestResultCallCount [
+
+	^ showTestResultCallCount ifNil: [ showTestResultCallCount := 0 ]
 ]
 
 { #category : #running }

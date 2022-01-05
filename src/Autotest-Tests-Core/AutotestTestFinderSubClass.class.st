@@ -6,11 +6,12 @@ Class {
 
 { #category : #running }
 AutotestTestFinderSubClass >> setUp [
+
 	super setUp
-	
 ]
 
 { #category : #tests }
 AutotestTestFinderSubClass >> testMethodsForASetUpMethodReturnsAllTestsAndSubClass [
+
 	self shouldReturnAllTestsFor: #setUp
 ]

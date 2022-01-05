@@ -12,20 +12,22 @@ Class {
 
 { #category : #accessing }
 AutotestRunnerTestErrorOnTestRessource class >> resources [
+
 	| current |
-	current := resources ifNil: [#()].
-	resources := #().
-	
-	^ current.
+	current := resources ifNil: [ #(  ) ].
+	resources := #(  ).
+	^ current
 ]
 
 { #category : #accessing }
 AutotestRunnerTestErrorOnTestRessource class >> resources: aCollection [
-	resources := aCollection.
+
+	resources := aCollection
 ]
 
 { #category : #handling }
 AutotestRunnerTestErrorOnTestRessource >> pass [
+
 	self assert: true
 ]
 
@@ -38,20 +40,22 @@ AutotestRunnerTestErrorOnTestRessource >> setUp [
 
 { #category : #tests }
 AutotestRunnerTestErrorOnTestRessource >> testWithAvailableRessource [
+
 	| result |
-	self class resources:  {MockAutotestAvailableResource}.
-	result := runner run: {self class>>#pass}.
-	
+	self class resources: { MockAutotestAvailableResource }.
+	result := runner run: { (self class >> #pass) }.
+
 	self assert: 1 equals: result passedCount.
-	self assert: 0 equals: result errorCount.
+	self assert: 0 equals: result errorCount
 ]
 
 { #category : #tests }
 AutotestRunnerTestErrorOnTestRessource >> testWithUnavailableRessource [
+
 	| result |
-	self class resources: {MockAutotestUnavailableResource}.
-	result := runner run: {self class>>#pass}.
-	
+	self class resources: { MockAutotestUnavailableResource }.
+	result := runner run: { (self class >> #pass) }.
+
 	self assert: 1 equals: result errorCount.
-	self assert: 0 equals: result passedCount.
+	self assert: 0 equals: result passedCount
 ]

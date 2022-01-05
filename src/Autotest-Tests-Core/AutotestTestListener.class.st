@@ -10,18 +10,22 @@ Class {
 
 { #category : #callbacks }
 AutotestTestListener >> aMethodToChange [
-						^ self
+
+	^ self
 ]
 
 { #category : #callbacks }
 AutotestTestListener >> methodModified: aCompiledMethod [
-	methodModifiedCalled := true.
+
+	methodModifiedCalled := true
 ]
 
 { #category : #running }
 AutotestTestListener >> setUp [
 
-	listener := AutotestListener on: self methodModified: #methodModified:.
+	listener := AutotestListener
+		            on: self
+		            methodModified: #methodModified:.
 	methodModifiedCalled := false
 ]
 
@@ -37,21 +41,23 @@ AutotestTestListener >> tearDown [
 ]
 
 { #category : #tests }
-AutotestTestListener >> testCallbackOnAddedMethod [	
+AutotestTestListener >> testCallbackOnAddedMethod [
+
 	self class
 		compile: 'newMethod
 						^ self'
 		classified: 'callbacks'.
-		
-	self assert: methodModifiedCalled.
+
+	self assert: methodModifiedCalled
 ]
 
 { #category : #tests }
 AutotestTestListener >> testCallbackOnModifiedMethod [
+
 	self class
 		compile: 'aMethodToChange
 						^ self'
 		classified: 'callbacks'.
-		
-	self assert: methodModifiedCalled.
+
+	self assert: methodModifiedCalled
 ]
