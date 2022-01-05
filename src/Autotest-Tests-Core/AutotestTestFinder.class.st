@@ -85,7 +85,7 @@ AutotestTestFinder >> testMethodsForATearDownMethodReturnsAllTests [
 
 { #category : #tests }
 AutotestTestFinder >> testMethodsForATestCaseMethodReturnsIt [
-	| lookupMethod foundMethods thisMethod |
+	| foundMethods |
 	
 	foundMethods := (finder methodsFor: thisContext method).
 	self assert: foundMethods size equals: 1.
@@ -97,7 +97,7 @@ AutotestTestFinder >> testMethodsForATestCaseMethodReturnsIt [
 
 { #category : #tests }
 AutotestTestFinder >> testMethodsForATestedMethodReturnsSenders [
-	| lookupMethod foundMethods thisMethod |
+	| lookupMethod foundMethods |
 	
 	lookupMethod := (AutotestFinder>>#methodsFor:).
 	foundMethods := (finder methodsFor: lookupMethod).
@@ -115,17 +115,17 @@ AutotestTestFinder >> testMethodsForLastHeuristicReturnsAllTestWhichReferenceThe
 
 { #category : #tests }
 AutotestTestFinder >> testMethodsForMethodThatHasAnArgumentShouldNotReturnIt [
-		| lookupMethod foundMethods thisMethod |
-	
-	lookupMethod := (self class>>#shouldNotBeFound:).
-	foundMethods := (finder methodsFor: lookupMethod).
 
-	self deny: (foundMethods includes: lookupMethod).
+	| lookupMethod foundMethods |
+	lookupMethod := self class >> #shouldNotBeFound:.
+	foundMethods := finder methodsFor: lookupMethod.
+
+	self deny: (foundMethods includes: lookupMethod)
 ]
 
 { #category : #tests }
 AutotestTestFinder >> testMethodsForMethodThatStartWithShouldReturnsIt [
-		| lookupMethod foundMethods thisMethod |
+		| lookupMethod foundMethods |
 	
 	lookupMethod := (self class>>#shouldBeFound).
 	foundMethods := (finder methodsFor: lookupMethod).
@@ -135,7 +135,7 @@ AutotestTestFinder >> testMethodsForMethodThatStartWithShouldReturnsIt [
 
 { #category : #tests }
 AutotestTestFinder >> testMethodsForReturnsTestCaseOfSamePackage [
-	| lookupMethod foundMethods thisMethod allMethods otherPackages thisPackage |
+	| lookupMethod foundMethods allMethods otherPackages thisPackage |
 	
 	thisPackage := self packageOfClass: thisContext methodClass.
 	lookupMethod := (AutotestFinder>>#allSendersOf:).
