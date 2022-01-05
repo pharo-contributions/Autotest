@@ -1,12 +1,14 @@
 Class {
 	#name : #AutotestOpenDashboardTest,
 	#superclass : #TestCase,
-	#category : #'Autotest-Tests-GUI'
+	#category : #'Autotest-Tests-GUI-Base'
 }
 
 { #category : #running }
 AutotestOpenDashboardTest >> tearDown [
+
 	AutotestDashboard close.
+	super tearDown
 ]
 
 { #category : #tests }
