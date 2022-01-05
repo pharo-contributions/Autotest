@@ -4,6 +4,12 @@ Class {
 	#category : #'Autotest-Tests-Core'
 }
 
+{ #category : #testing }
+AbstractAutotestTestCase class >> isAbstract [
+		
+	^ self == AbstractAutotestTestCase
+]
+
 { #category : #running }
 AbstractAutotestTestCase >> tearDown [
 
