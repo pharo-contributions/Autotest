@@ -1,6 +1,16 @@
 # Autotest
 Autotest is a live testing tool for [Pharo](https://www.pharo.org)
 
+## Install
+You can install **Tealight** by executing the following load scripts:
+
+```Smalltalk
+Metacello new 
+	repository: 'github://pharo-contributions/Autotest/src';
+	baseline: 'Autotest';
+	load 	
+```	
+
 ## History
 
 Autotest was originally created by Laurent Laffont in Pharo 2.0, back then hosted on SqueakSource, later on SmalltalkHub sourcecode server before it was migrated to GitHub. It received various contributions from members of the Pharo community like
