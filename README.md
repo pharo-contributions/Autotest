@@ -23,5 +23,4 @@ There was also another repo at [http://smalltalkhub.com/Pharo/AutoTest/mc/](http
 
 ## Video
 
-<iframe src="https://player.vimeo.com/video/12666507?h=a26aede28d" width="640" height="480" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-<p><a href="https://vimeo.com/12666507">Autotest for Pharo</a> from <a href="https://vimeo.com/laurentlaffont">Laurent Laffont</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+Please check [Autotest for Pharo](https://vimeo.com/12666507) from [Laurent Laffont](https://vimeo.com/laurentlaffont)
