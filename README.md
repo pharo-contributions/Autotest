@@ -3,7 +3,7 @@ Autotest is a live testing tool for [Pharo](https://www.pharo.org)
 
 ## History
 
-Autotest originally was originally created by Laurent Laffont, originally hosted on SqueakSource, later on SmalltalkHub. It received various contributions from members of the Pharo community like
+Autotest was originally created by Laurent Laffont in Pharo 2.0, back then hosted on SqueakSource, later on SmalltalkHub sourcecode server before it was migrated to GitHub. It received various contributions from members of the Pharo community like
 
 - Laurent Laffont
 - Benjamin Van Ryseghem
