@@ -60,7 +60,7 @@ AutotestTestFinder >> shouldReturnAllTestsFor: aSelector [
 
 { #category : #running }
 AutotestTestFinder >> tearDown [
-	"Used for tests"
+	"Even when it is not doing something, please do not remove this method. It is provided for tests"
 
 	^ super tearDown
 ]
