@@ -56,7 +56,8 @@ AutotestTestListener >> testCallbackOnModifiedMethod [
 
 	self class
 		compile: 'aMethodToChange
-						^ self'
+
+	^ self'
 		classified: 'callbacks'.
 
 	self assert: methodModifiedCalled
