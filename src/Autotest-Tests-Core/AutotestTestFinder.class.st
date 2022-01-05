@@ -45,7 +45,7 @@ AutotestTestFinder >> shouldNotBeFound: anArgument [
 { #category : #private }
 AutotestTestFinder >> shouldReturnAllTestsFor: aSelector [
 
-	| lookupMethod foundMethods thisMethod myTests |
+	| lookupMethod foundMethods myTests |
 	lookupMethod := self class >> aSelector.
 	myTests := OrderedCollection new.
 	myTests addAll: (self class methods select: [ :aCompiledMethod | 
