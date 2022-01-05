@@ -8,16 +8,19 @@ Class {
 }
 
 { #category : #accessing }
-AutotestAPIDocumentation class >> bookName [ 
+AutotestAPIDocumentation class >> bookName [
+
 	^ 'API Documentation'
 ]
 
 { #category : #defaults }
 AutotestAPIDocumentation class >> builder [
+
 	^ PackageAPIHelpBuilder
 ]
 
 { #category : #accessing }
 AutotestAPIDocumentation class >> helpPackages [
-	^#('Autotest-Core' 'Autotest-GUI')
+
+	^ #( 'Autotest-Core' 'Autotest-GUI' )
 ]
