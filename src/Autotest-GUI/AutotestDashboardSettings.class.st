@@ -4,7 +4,7 @@ I register settings for AutotestDashboard.
 Class {
 	#name : #AutotestDashboardSettings,
 	#superclass : #Object,
-	#category : #'Autotest-GUI'
+	#category : #'Autotest-GUI-Settings'
 }
 
 { #category : #settings }

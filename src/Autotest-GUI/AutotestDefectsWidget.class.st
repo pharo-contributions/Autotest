@@ -8,7 +8,7 @@ Class {
 		'status',
 		'result'
 	],
-	#category : #'Autotest-GUI'
+	#category : #'Autotest-GUI-Widgets'
 }
 
 { #category : #callbacks }

@@ -14,7 +14,7 @@ Class {
 		'logs',
 		'selectedTest'
 	],
-	#category : #'Autotest-GUI'
+	#category : #'Autotest-GUI-Widgets'
 }
 
 { #category : #accessing }

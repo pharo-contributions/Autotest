@@ -13,7 +13,7 @@ Class {
 		'Default',
 		'ShowAutotestDashboard'
 	],
-	#category : #'Autotest-GUI'
+	#category : #'Autotest-GUI-Base'
 }
 
 { #category : #twmbar }

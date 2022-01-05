@@ -11,7 +11,7 @@ Class {
 		'errorLabel',
 		'container'
 	],
-	#category : #'Autotest-GUI'
+	#category : #'Autotest-GUI-Widgets'
 }
 
 { #category : #callbacks }

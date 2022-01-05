@@ -6,7 +6,7 @@ Class {
 		'method',
 		'result'
 	],
-	#category : #'Autotest-GUI'
+	#category : #'Autotest-GUI-Utilities'
 }
 
 { #category : #accessing }

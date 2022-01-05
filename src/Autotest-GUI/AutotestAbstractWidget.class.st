@@ -4,7 +4,7 @@ I'm the base class for widgets to be displayed in Autotest Dashboard.
 Class {
 	#name : #AutotestAbstractWidget,
 	#superclass : #Object,
-	#category : #'Autotest-GUI'
+	#category : #'Autotest-GUI-Widgets'
 }
 
 { #category : #'initialize-release' }

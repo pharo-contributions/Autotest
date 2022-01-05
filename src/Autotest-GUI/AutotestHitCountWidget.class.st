@@ -10,7 +10,7 @@ Class {
 		'hitCountLabel',
 		'container'
 	],
-	#category : #'Autotest-GUI'
+	#category : #'Autotest-GUI-Widgets'
 }
 
 { #category : #initialize }

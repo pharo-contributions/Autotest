@@ -8,7 +8,7 @@ Class {
 	#classVars : [
 		'Default'
 	],
-	#category : #'Autotest-GUI'
+	#category : #'Autotest-GUI-Morphic'
 }
 
 { #category : #geometry }
