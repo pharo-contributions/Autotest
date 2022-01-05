@@ -11,8 +11,8 @@ Class {
 AutotestTestOneLongRun >> setUp [
 
 	super setUp.
-	self deny: (AutotestTestMockTestCase>>#testLongMethod) class = AutotestHitCounter.
-	autotest methodModified: (AutotestTestMockTestCase>>#testLongMethod)
+	self deny: (AutotestTestMockTestCase >> #testLongMethod) class equals: AutotestHitCounter.
+	autotest methodModified: AutotestTestMockTestCase >> #testLongMethod
 ]
 
 { #category : #tests }
