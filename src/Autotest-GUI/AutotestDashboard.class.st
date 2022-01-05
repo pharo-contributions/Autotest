@@ -56,7 +56,9 @@ AutotestDashboard class >> example [
 
 { #category : #actions }
 AutotestDashboard class >> open [
-	^ self default open.
+	<script>
+	
+	^ self default open
 ]
 
 { #category : #settings }
