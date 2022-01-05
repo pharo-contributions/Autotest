@@ -10,7 +10,7 @@ Class {
 	#category : #'Autotest-Tests-Core-Base'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : #accessing }
 AutotestRunnerTestErrorOnTestRessource class >> resources [
 	| current |
 	current := resources ifNil: [#()].
@@ -19,7 +19,7 @@ AutotestRunnerTestErrorOnTestRessource class >> resources [
 	^ current.
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #accessing }
 AutotestRunnerTestErrorOnTestRessource class >> resources: aCollection [
 	resources := aCollection.
 ]
