@@ -59,18 +59,18 @@ AutotestTestFinder >> tearDown [
 ]
 
 { #category : #tests }
-AutotestTestFinder >> testBaseCategoryName [
-	self assert: 'Zork' equals: (finder baseCategoryNameOf: 'Zork').
-	self assert: 'ZorkCore' equals: (finder baseCategoryNameOf: 'ZorkCore').
-	self assert: 'Zork' equals: (finder baseCategoryNameOf: 'Zork-Core').
-	self assert: 'Zork' equals: (finder baseCategoryNameOf: 'Zork-Tests').
-	self assert: 'Zork' equals: (finder baseCategoryNameOf: 'ZorkTests').
-	self assert: 'Zork' equals: (finder baseCategoryNameOf: 'Tests-Zork').
-	self assert: 'Zork' equals: (finder baseCategoryNameOf: 'Zork-Tests-Core').
-	self assert: 'Zork-GUI' equals: (finder baseCategoryNameOf: 'Zork-Tests-GUI').
-	self assert: 'Zork-Core-Data' equals: (finder baseCategoryNameOf: 'Zork-Tests-Core-Data').
-	self assert: 'Tools-PointerFinder' equals: (finder baseCategoryNameOf: 'ToolsTest-PointerFinder').
-	self deny: ('Zork'  = (finder baseCategoryNameOf: 'Grouik')).
+AutotestTestFinder >> testBasePackageName [
+	self assert: 'Zork' equals: (finder basePackageNameOf: 'Zork').
+	self assert: 'ZorkCore' equals: (finder basePackageNameOf: 'ZorkCore').
+	self assert: 'Zork' equals: (finder basePackageNameOf: 'Zork-Core').
+	self assert: 'Zork' equals: (finder basePackageNameOf: 'Zork-Tests').
+	self assert: 'Zork' equals: (finder basePackageNameOf: 'ZorkTests').
+	self assert: 'Zork' equals: (finder basePackageNameOf: 'Tests-Zork').
+	self assert: 'Zork' equals: (finder basePackageNameOf: 'Zork-Tests-Core').
+	self assert: 'Zork-GUI' equals: (finder basePackageNameOf: 'Zork-Tests-GUI').
+	self assert: 'Zork-Core-Data' equals: (finder basePackageNameOf: 'Zork-Tests-Core-Data').
+	self assert: 'Tools-PointerFinder' equals: (finder basePackageNameOf: 'ToolsTest-PointerFinder').
+	self deny: ('Zork'  = (finder basePackageNameOf: 'Grouik')).
 ]
 
 { #category : #tests }
@@ -109,7 +109,7 @@ AutotestTestFinder >> testMethodsForATestedMethodReturnsSenders [
 AutotestTestFinder >> testMethodsForLastHeuristicReturnsAllTestWhichReferenceTheClass [
 	| myTestMethods foundMethods |
 	myTestMethods := self class allTestMethods asOrderedCollection.
-	foundMethods := finder methodsFor: (finder class>>'baseCategoryNameOfMethod:' asSymbol).
+	foundMethods := finder methodsFor: (finder class>>'basePackageNameOfMethod:' asSymbol).
 	self assert: foundMethods equals: myTestMethods.
 ]
 

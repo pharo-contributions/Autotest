@@ -17,7 +17,7 @@ AutotestFinder >> allSendersOf: aCompiledMethod [
 ]
 
 { #category : #search }
-AutotestFinder >> baseCategoryNameOf: aCategoryName [
+AutotestFinder >> basePackageNameOf: aCategoryName [
 	"For Zork-Tests, Zork, ZorkTests or Tests-Zork answers Zork."
 	"Todo: find a good regex"
 	| words |
@@ -28,16 +28,16 @@ AutotestFinder >> baseCategoryNameOf: aCategoryName [
 ]
 
 { #category : #search }
-AutotestFinder >> baseCategoryNameOfMethod: aCompiledMethod [
+AutotestFinder >> basePackageNameOfMethod: aCompiledMethod [
 
 	"Often tests are not in the same package as the methods. So we need to find the
-	category related to a given method. We compare just the root/base of the category name.
+	package related to a given method. We compare just the root/base of the package name.
 	
-	 For a method of category Zork-Tests answers 'Zork'.
-	 See baseCategoryNameOf:'"
+	 For a method of package Zork-Tests answers 'Zork'.
+	 See basePackageNameOf:'"
 
-	^ self baseCategoryNameOf:
-		  aCompiledMethod methodClass instanceSide category
+	^ self basePackageNameOf:
+		  aCompiledMethod methodClass instanceSide package name
 ]
 
 { #category : #search }
@@ -73,12 +73,13 @@ AutotestFinder >> testsForAStandardMethod: aCompiledMethod [
 	For example, if the method is part of the package Zork-Core and the tests in package Zork-Tests, it will
 	find it"
 	| allSenders baseCategoryName |
-	baseCategoryName := self baseCategoryNameOfMethod: aCompiledMethod.
+	baseCategoryName := self basePackageNameOfMethod: aCompiledMethod.
 	allSenders := self allSendersOf: aCompiledMethod.
 	^ allSenders select: 
 		[:sender|  
 		sender isTestMethod
-		and: [baseCategoryName = (self baseCategoryNameOfMethod: sender)]].
+		and: [
+			baseCategoryName = (self basePackageNameOfMethod: sender)]].
 ]
 
 { #category : #heuristics }
@@ -106,15 +107,15 @@ AutotestFinder >> testsForATestMethod: aCompiledMethod [
 AutotestFinder >> testsForClassReferenceOf: aCompiledMethod [
 	"Find all tests in related packages that reference the method's class"
 	| baseCategoryName allSendersClass allTests |
-	baseCategoryName := self baseCategoryNameOfMethod: aCompiledMethod.
+	baseCategoryName := self basePackageNameOfMethod: aCompiledMethod.
 	allSendersClass := (aCompiledMethod methodClass allCallsOn 
 							collect: [:aReference| 
 									 aReference methodClass]) asSet
 							select: [:aClass| 
 									(aClass isKindOf: TestCase class) 
-									and: [baseCategoryName = (self baseCategoryNameOf: aClass category)]].
+									and: [baseCategoryName = (self basePackageNameOf: aClass package name)]].
 	
 	allTests := OrderedCollection new.
 	allSendersClass do: [:aClass|  allTests addAll: aClass allTestMethods].
-	^ allTests.
+	^ allTests
 ]
