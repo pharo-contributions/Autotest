@@ -1,3 +1,6 @@
+"
+A log entry for Autotest
+"
 Class {
 	#name : #AutotestLogEntry,
 	#superclass : #Object,
