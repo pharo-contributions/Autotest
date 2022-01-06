@@ -6,7 +6,7 @@ You can install **Autotest** tool by executing the following load scripts:
 
 ```Smalltalk
 Metacello new 
-	repository: 'github://pharo-contributions/Autotest/src';
+	repository: 'github://pharo-contributions/Autotest:main/src';
 	baseline: 'Autotest';
 	load 	
 ```	
