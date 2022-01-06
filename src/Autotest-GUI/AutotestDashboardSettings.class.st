@@ -9,8 +9,8 @@ Class {
 
 { #category : #settings }
 AutotestDashboardSettings class >> autotestDashboardSettingsOn: aBuilder [
-
 	<systemsettings>
+
 	(aBuilder setting: #showAutotestDashboard)
 		label: 'Enable Autotest' translated;
 		target: AutotestDashboard;

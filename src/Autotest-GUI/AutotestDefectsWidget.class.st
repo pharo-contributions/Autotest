@@ -13,47 +13,54 @@ Class {
 
 { #category : #callbacks }
 AutotestDefectsWidget >> defectList [
+
 	^ (self defects collect: [ :aTestCase | 
-							 aTestCase printString, ': ',
-							 (result signalFor: aTestCase) asString]) asOrderedCollection.
+		   aTestCase printString , ': '
+		   , (result signalFor: aTestCase) asString ]) asOrderedCollection
 ]
 
 { #category : #callbacks }
 AutotestDefectsWidget >> defectSelected: anInteger [
+
 	| errorSelected |
 	errorSelected := self defects at: anInteger ifAbsent: nil.
-	errorSelected ifNotNil: [ errorSelected debug ].
+	errorSelected ifNotNil: [ errorSelected debug ]
 ]
 
 { #category : #accessing }
 AutotestDefectsWidget >> defects [
+
 	^ self result defects asArray
 ]
 
 { #category : #'initialize-release' }
 AutotestDefectsWidget >> initWidgetOn: aDashboard [
+
 	| listMorph |
-	listMorph := PluggableListMorph 
-		on: self 
-		list: #defectList 
-		selected: nil 
-		changeSelected: #defectSelected:.
+	listMorph := PluggableListMorph
+		             on: self
+		             list: #defectList
+		             selected: nil
+		             changeSelected: #defectSelected:.
 	listMorph hResizing: #spaceFill.
-	aDashboard addMorph: listMorph..
+	aDashboard addMorph: listMorph
 ]
 
 { #category : #accessing }
 AutotestDefectsWidget >> order [
+
 	^ 3
 ]
 
 { #category : #accessing }
-AutotestDefectsWidget >> result [ 
-	^ result ifNil: [result := TestResult new]
+AutotestDefectsWidget >> result [
+
+	^ result ifNil: [ result := TestResult new ]
 ]
 
 { #category : #callbacks }
 AutotestDefectsWidget >> showTestResult: aTestResult OfMethod: aCompiledMethod [
+
 	result := aTestResult.
-	self changed: #defectList.
+	self changed: #defectList
 ]

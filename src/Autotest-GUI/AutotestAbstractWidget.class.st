@@ -15,25 +15,29 @@ AutotestAbstractWidget class >> isAbstract [
 
 { #category : #'initialize-release' }
 AutotestAbstractWidget >> dashboardIsClosing [
-	self
+	"Do nothing here"
 ]
 
 { #category : #'initialize-release' }
 AutotestAbstractWidget >> initWidgetOn: aDashboard [
-	self subclassResponsibility.
+
+	self subclassResponsibility
 ]
 
 { #category : #accessing }
 AutotestAbstractWidget >> order [
+
 	^ 100
 ]
 
 { #category : #callbacks }
-AutotestAbstractWidget >> showMethodModified: aCompiledMethod [ 
+AutotestAbstractWidget >> showMethodModified: aCompiledMethod [
+
 	^ self
 ]
 
 { #category : #callbacks }
 AutotestAbstractWidget >> showTestResult: aTestResult OfMethod: aCompiledMethod [
+
 	self
 ]

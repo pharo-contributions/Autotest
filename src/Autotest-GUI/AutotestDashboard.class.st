@@ -19,39 +19,43 @@ Class {
 { #category : #twmbar }
 AutotestDashboard class >> activeAutotestButtonOn: aBuilder [
 	<twmBarButton>
-	aBuilder 
-		action: [AutotestDashboard showAutotestDashboard: (AutotestDashboard showAutotestDashboard not) ];
+
+	aBuilder
+		action: [ 
+			self showAutotestDashboard: self showAutotestDashboard not ];
 		icon: self autotestIcon;
-		help: 'Toggle autotest'.
+		help: 'Toggle autotest'
 ]
 
 { #category : #twmbar }
-AutotestDashboard class >> autotestIcon [ 
-	^ ((Morph new
-		fillStyle: (CompositeFillStyle fillStyles: {
- 					ImageFillStyle form: ( Morph new
-											color: Color yellow;
-											bounds: (0@0 corner: 16@16)) imageForm.
-					ImageFillStyle form: TestRunner taskbarIcon.} ) )
-		extent: 16@16) imageForm.
+AutotestDashboard class >> autotestIcon [
+
+	^ ((Morph new fillStyle: (CompositeFillStyle fillStyles: { 
+				     (ImageFillStyle form: (Morph new
+						       color: Color yellow;
+						       bounds: (0 @ 0 corner: 16 @ 16)) imageForm).
+				     (ImageFillStyle form: TestRunner taskbarIcon) })) extent:
+		   16 @ 16) imageForm
 ]
 
 { #category : #actions }
 AutotestDashboard class >> close [
+
 	self default close.
 	Default := nil.
-	Smalltalk garbageCollect.
+	Smalltalk garbageCollect
 ]
 
 { #category : #defaults }
-AutotestDashboard class >> default [ 
-	^ Default ifNil: [Default := self new].
+AutotestDashboard class >> default [
+
+	^ Default ifNil: [ Default := self new ]
 ]
 
 { #category : #examples }
 AutotestDashboard class >> example [
 
-	^self open
+	^ self open
 ]
 
 { #category : #actions }
@@ -63,16 +67,18 @@ AutotestDashboard class >> open [
 
 { #category : #settings }
 AutotestDashboard class >> showAutotestDashboard [
-	^ ShowAutotestDashboard ifNil: [ShowAutotestDashboard := false].
+
+	^ ShowAutotestDashboard ifNil: [ ShowAutotestDashboard := false ]
 ]
 
 { #category : #settings }
 AutotestDashboard class >> showAutotestDashboard: aBoolean [
+
 	ShowAutotestDashboard := aBoolean.
-	ShowAutotestDashboard 
-		ifTrue: [self open] 
-		ifFalse: [self close].
-	^ ShowAutotestDashboard.
+	ShowAutotestDashboard
+		ifTrue: [ self open ]
+		ifFalse: [ self close ].
+	^ ShowAutotestDashboard
 ]
 
 { #category : #actions }
