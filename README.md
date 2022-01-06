@@ -26,7 +26,7 @@ or manually changing the settings
 
 # Screenshot
 
-![Autotest in Pharo](Autotest.jpg "Autotest in Pharo 10")
+![Autotest in Pharo](https://raw.githubusercontent.com/pharo-contributions/Autotest/main/autotest.jpg "Autotest in Pharo 10")
 
 ## History
 
