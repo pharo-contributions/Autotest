@@ -11,6 +11,16 @@ Metacello new
 	load 	
 ```	
 
+## Run
+
+You can run the code using:
+
+```Smalltalk
+AutotestDashboard showAutotestDashboard: true
+```	
+or manually changing the settings
+
+
 ## History
 
 Autotest was originally created by Laurent Laffont in Pharo 2.0, back then hosted on SqueakSource, later on SmalltalkHub sourcecode server before it was migrated to GitHub. It received various contributions from members of the Pharo community like
