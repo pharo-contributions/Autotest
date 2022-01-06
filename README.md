@@ -2,7 +2,7 @@
 Autotest is a live testing tool for [Pharo](https://www.pharo.org)
 
 ## Install
-You can install **Tealight** by executing the following load scripts:
+You can install **Autotest** tool by executing the following load scripts:
 
 ```Smalltalk
 Metacello new 
