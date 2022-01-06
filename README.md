@@ -24,6 +24,9 @@ AutotestDashboard showAutotestDashboard: true
 ```	
 or manually changing the settings
 
+# Screenshot
+
+![Autotest in Pharo](Autotest.jpg "Autotest in Pharo 10")
 
 ## History
 
